@@ -1,0 +1,9 @@
+<p>
+    Checkout 
+</p>
+<hr>
+<div class="product-list">
+
+</div>
+
+<app-product *ngFor="let item of cart$ | async" [product]="item"  (remove)="removeFromCart(item.id)"></app-product>

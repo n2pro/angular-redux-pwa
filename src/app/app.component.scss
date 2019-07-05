@@ -1,0 +1,22 @@
+.main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+    .block1 {
+        width: 70%;
+        height: 100%;
+        padding: 1rem;
+        border: 2px solid black;
+        flex-flow: row wrap;
+    }
+
+    .block2 {
+        width: 30%;
+        height: 100%;
+        padding: 1rem;
+        border: 2px solid black;
+        flex-flow: row wrap;
+    }
+
+}
