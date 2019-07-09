@@ -1,7 +1,9 @@
 <p>
   Catalog
+
   
 </p>
+<button (click)="revert()">Restore store</button>
 <hr>
 <div class="product-list">
     <app-product *ngFor="let item of products$ | async" [product]="item" (add)="addToCart(item)" (remove)="remove(item.id)"></app-product>

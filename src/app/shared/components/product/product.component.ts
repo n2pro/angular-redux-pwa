@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../../model/product.model';
+import { AppState } from '../../../srore/reducers';
+import { Store } from '@ngrx/store';
+import { CartRemoveItem } from '../../../srore/cart/action';
 
 @Component({
   selector: 'app-product',
@@ -16,7 +19,7 @@ export class ProductComponent implements OnInit {
   @Output()
   public remove = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
   }
@@ -26,6 +29,7 @@ export class ProductComponent implements OnInit {
   }
 
   public selfRemove($event) {
+    this.store.dispatch(new CartRemoveItem(this.product.id));
     this.remove.emit(this.product);
   }
 }

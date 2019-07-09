@@ -17,5 +17,5 @@ export const cartFetched: MemoizedSelector<AppState, boolean> = createSelector(
 
 export const cartData: MemoizedSelector<AppState, Product[]> = createSelector(
     stateCart,
-    (state: CartState) => state.items
+    (state: CartState) => state.data.items
 );

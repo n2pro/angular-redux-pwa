@@ -20,4 +20,14 @@ export class ProductsChangeQuantity implements Action {
   constructor(public payload: Product) {}
 }
 
-export type ProductsActions = ProductsGet | ProductsGetSuccess | ProductsClear | ProductsChangeQuantity;
+export class ProductDelete implements Action {
+  public readonly type = EProductsActions.PRODUCT_DELETE;
+    constructor(public payload: string) {}
+}
+
+export class ProductsRevert implements Action {
+  public readonly type = EProductsActions.PRODUCTS_REVERT;
+
+}
+
+export type ProductsActions = ProductsGet | ProductsGetSuccess | ProductsClear | ProductsChangeQuantity | ProductDelete | ProductsRevert ;

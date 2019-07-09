@@ -5,7 +5,7 @@ import { Product } from '../../../model/product.model';
 import { productsData } from '../../../srore/products/selector';
 import { CartAddItem } from '../../../srore/cart/action';
 import { AppState } from '../../../srore/reducers';
-import { ProductsGet } from '../../../srore/products/action';
+import { ProductsGet, ProductsRevert, ProductDelete } from '../../../srore/products/action';
 
 @Component({
   selector: 'app-product-list',
@@ -30,5 +30,10 @@ export class ProductListComponent implements OnInit {
   }
 
   public remove(id: string) {
+    this.store.dispatch( new ProductDelete(id));
+  }
+
+  public revert() {
+    this.store.dispatch( new ProductsRevert());
   }
 }

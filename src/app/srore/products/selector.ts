@@ -17,5 +17,6 @@ export const productsFetched: MemoizedSelector<AppState, boolean> = createSelect
 
 export const productsData: MemoizedSelector<AppState, Product[]> = createSelector(
   stateProducts,
-  (state: ProductsState) => state.products
+  (state: ProductsState) => state.data.products
 );
+
